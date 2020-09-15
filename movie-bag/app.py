@@ -1,6 +1,6 @@
 from flask import Flask, jsonify, request, Response
 from database.db import initialize_db
-from database.models.movie import Movie
+from database.models import Movie
 
 app = Flask(__name__)
 
@@ -17,8 +17,13 @@ def get_movies():
     movies = Movie.objects().to_json()
     return Response(movies, mimetype="application/json", status=200)
 
+@app.route('/movies/<id>')
+def get_movie(id):
+    movies = Movie.objects.get(id=id).to_json()
+    return Response(movies, mimetype="application/json", status=200)
+
 @app.route('/movies', methods=['POST'])
-def add_movie()
+def add_movie():
     body = request.get_json()
     movie = Movie(**body).save()
     id = movie.id
