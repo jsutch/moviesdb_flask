@@ -153,7 +153,7 @@
                 "sha256:89aab215427ef59c34ad58735269eb58b1a5808103067f7bb9d5836c651b3bb0",
                 "sha256:f0a4641d3cf955324a89c04f3d94663aa4d638abe8f733ecd3582848e1c37035"
             ],
-            "version": "==2.11.2"
+            "version": "==2.11.3"
         },
         "markupsafe": {
             "hashes": [
@@ -212,7 +212,7 @@
                 "sha256:5c6eca3c2940464d106b99ba83b00c6add741c9becaec087fb7ccdefea71350e",
                 "sha256:8d59a976fb773f3e6a39c85636357c4f0e242707394cadadd9814f5cbaa20e96"
             ],
-            "version": "==1.7.1"
+            "version": "==2.4.0"
         },
         "pymongo": {
             "hashes": [
