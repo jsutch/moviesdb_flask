@@ -1,9 +1,8 @@
-from flask import Flask, request
-from flask_restful import Resource, reqparse
+from flask_restful import Resource
 
 class Test(Resource):
     """
-    test harness. return whatever name passed
+    test harness. 
     """
     def get(self):
         """

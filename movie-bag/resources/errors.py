@@ -1,4 +1,6 @@
-
+"""
+Custom Errors
+"""
 class InternalServerError(Exception):
     pass
 

@@ -3,11 +3,10 @@ from flask_jwt_extended import create_access_token, decode_token
 from database.models import User
 from flask_restful import Resource
 import datetime
-from resources.errors import SchemaValidationError, InternalServerError, \
-    EmailDoesnotExistsError, BadTokenError
-from jwt.exceptions import ExpiredSignatureError, DecodeError, \
-    InvalidTokenError
+from resources.errors import SchemaValidationError, InternalServerError, EmailDoesnotExistsError, BadTokenError
+from jwt.exceptions import ExpiredSignatureError, DecodeError, InvalidTokenError
 from services.mail_service import send_email
+
 
 class ForgotPassword(Resource):
     def post(self):

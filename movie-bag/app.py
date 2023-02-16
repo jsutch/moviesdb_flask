@@ -2,15 +2,18 @@ from flask import Flask
 from flask_bcrypt import Bcrypt
 from flask_restful import Api
 from flask_jwt_extended import JWTManager
-
-from database.db import initialize_db
 from flask_mail import Mail 
+
+# local imports
+from database.db import initialize_db
 
 # Errors
 from resources.errors import errors
+
 # local creds
 import creds
 
+# instantiate app
 app = Flask(__name__)
 
 # import JWT key
@@ -37,11 +40,13 @@ app.config["MONGODB_SETTINGS"] = {
     "password":creds.mongopassword,
     "host":"mongodb://storage/movie-bag?authSource=admin",
 }
+# app.config["MONGODB_SETTINGS"] = {
+#     "db":'movie-bag-test',
+#     "username":creds.mongouser,
+#     "password":creds.mongopassword,
+#     "host":"mongodb://storage/movie-bag?authSource=admin",
+# }
 app.config['PROPAGATE_EXCEPTIONS'] = False # custom exceptions fail without this
 
 initialize_db(app)
 initialize_routes(api)
-
-# moved to run.py
-# app.run(debug=True)
-# app.run()
